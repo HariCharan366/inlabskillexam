@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Quiz Exam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1 class="main-title">Online Quiz Exam</h1>
+
+    <!-- 1. LOGIN SECTION -->
+    <div id="login-section" class="card">
+      <h2>Student Login</h2>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" id="username" placeholder="Enter username" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Enter password" required>
+        </div>
+
+        <div id="login-msg" class="error-msg"></div>
+
+        <button type="submit" class="btn btn-primary">Login & Start</button>
+      </form>
+    </div>
+
+    <!-- 2. QUIZ SECTION -->
+    <div id="quiz-section" class="card hidden">
+      <div class="quiz-header">
+        <span id="user-display">Candidate: <strong></strong></span>
+        <span id="question-count">Question 1 of 5</span>
+      </div>
+
+      <div class="question-box">
+        <h3 id="question-text">Question will appear here</h3>
+        <div id="options-box" class="options-group">
+          <!-- Options dynamically rendered here -->
+        </div>
+      </div>
+
+      <div class="quiz-footer">
+        <button id="btn-next" class="btn btn-primary">Next Question</button>
+      </div>
+    </div>
+
+    <!-- 3. RESULT SECTION -->
+    <div id="result-section" class="card hidden">
+      <h2>Exam Result</h2>
+
+      <div class="score-display">
+        <p>Candidate: <strong id="res-username"></strong></p>
+        <p class="score-text">Your Current Score: <span id="current-score" class="score-val">0</span> / 5</p>
+
+        <!-- HIGHEST SCORE (Stored in localStorage) -->
+        <div class="highest-score-box">
+          <p>🏆 Highest Score: <span id="highest-score" class="high-val">0</span> / 5</p>
+          <small id="high-score-note"></small>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button id="btn-restart" class="btn btn-primary">Retake Quiz</button>
+        <button id="btn-logout" class="btn btn-secondary">Logout</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
